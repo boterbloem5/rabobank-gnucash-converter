@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<title>Rabo Transactions to QIF</title>
+
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+</head>
+
+  <body>
+    <div class="container">
+    <p>
+  <img src="{{ url_for('static', filename='icon.png') }}" class="img-responsive" style="margin-top:15px;"><h1>Rabo Transactions to QIF</h1>
+    </p>
+<h5>
+Convert Rabobank transactions CSV to QIF
+</h5>
+
+</br>
+
+
+<!-- action is the URL you want to move to next-->
+
+   <div class="form-group">
+
+       <form action="" method=post enctype=multipart/form-data>
+       <p>
+            <label class="control-label">Select File</label>
+
+            {% for message in get_flashed_messages() %}
+                <div class=flash><p>{{ message }}</p></div>
+              {% endfor %}
+
+            <input id="input-1" type="file" class="file" name="file">
+          </p>
+          </br>
+         <p>
+   <button class="btn btn-default btn-file" type='submit' value='Upload'>Submit</button> <!-- value is the text that will appear on the button. -->
+   </p>
+    </form>
+
+   </div>
+
+
+
+
+    </div><!-- /.container -->
+
+    <footer class='footer'>
+      <div class='container-fluid'>
+        <hr />
+        <p class='pull-right'><p class='pull-right'><a href="https://github.com/LvanWissen/rabo-gnucash-converter">View on GitHub</a> | Leon van Wissen</p></p>
+      </div>
+    </footer>
+    </body>
+    </html>
