@@ -31,7 +31,7 @@ def importer(filename):
     Import .csv file with transaction data
     """
 
-    transaction_data = open(filename, encoding='utf-8')
+    transaction_data = open(filename )
 
     transaction_dict = csv.DictReader(transaction_data, fieldnames=csv_fieldnames)
 
@@ -56,7 +56,7 @@ P{contra_account} {to_name} {description}
 
 def qif_return(filename):
 
-    with open('static/transactions.qif', 'w', encoding='utf-8') as outfile:
+    with open('static/transactions.qif', 'w' ) as outfile:
         outfile.write("!Type:Bank")
         outfile.write("\n\n")
 
@@ -81,7 +81,7 @@ def qif_return(filename):
 if __name__ == '__main__':
     importer("transactions.txt")
 
-    with open('output.qif', 'w', encoding='utf-8') as outfile:
+    with open('output.qif', 'w' ) as outfile:
         outfile.write("!Type:Bank")
         outfile.write("\n\n")
 
